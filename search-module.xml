@@ -6,8 +6,20 @@
             <class name="com.searchmodule.tests.SearchPageTest" />
         </classes>
     </test>
-    <test name="search-test-qa">
-        <parameter name="keyword" value="qa" />
+    <test name="search-test-webdriver">
+        <parameter name="keyword" value="webdriver" />
+        <classes>
+            <class name="com.searchmodule.tests.SearchPageTest" />
+        </classes>
+    </test>
+    <test name="search-test-docker">
+        <parameter name="keyword" value="docker" />
+        <classes>
+            <class name="com.searchmodule.tests.SearchPageTest" />
+        </classes>
+    </test>
+    <test name="search-test-kubernetes">
+        <parameter name="keyword" value="kubernetes" />
         <classes>
             <class name="com.searchmodule.tests.SearchPageTest" />
         </classes>
