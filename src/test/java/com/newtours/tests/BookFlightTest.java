@@ -3,6 +3,7 @@ package com.newtours.tests;
 import com.newtours.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -20,7 +21,8 @@ public class BookFlightTest {
         this.noOfPassengers = noOfPassengers;
         this.expectedPrice = expectedPrice;
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Rane\\Documents\\chromedriver_win32\\chromedriver.exe");
-        this.driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions().setBinary("C:\\Program Files (x86)\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+        this.driver = new ChromeDriver(options);
     }
 
     @Test
