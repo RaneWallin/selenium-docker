@@ -50,10 +50,12 @@ public class SearchPage {
         this.videosLink.click();
     }
 
-    public void printResult() {
+    public int getResult() {
         By by = By.className("tile--vid");
         this.wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(by, 0));
 
         System.out.println(this.videos.size());
+
+        return this.videos.size();
     }
 }

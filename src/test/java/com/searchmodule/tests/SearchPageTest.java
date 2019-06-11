@@ -4,8 +4,10 @@ import com.searchmodule.pages.SearchPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class SearchPageTest {
@@ -19,12 +21,15 @@ public class SearchPageTest {
     }
 
     @Test
-    public void search() {
+    @Parameters({"keyword"})
+    public void search(String keyword) {
         SearchPage searchPage = new SearchPage(driver);
         searchPage.goTo();
-        searchPage.doSearch("qa");
+        searchPage.doSearch(keyword);
         searchPage.goToVideos();
-        searchPage.printResult();
+        int size = searchPage.getResult();
+
+        Assert.assertTrue(size > 0);
     }
 
     @AfterTest
